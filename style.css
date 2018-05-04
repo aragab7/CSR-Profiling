@@ -174,3 +174,7 @@ input.invalid {
 .step.finish {
   background-color: #4CAF50;
 }
+
+h1 {
+  text-align:center;
+}

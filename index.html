@@ -83,49 +83,18 @@
 
 </form>
 
-<?php
-$serverName = "localhost";
-$uid = "Ahmed\Malcolm_X";
-$pwd = "";
-$databaseName = "uber";
 
-$connectionInfo = array( "UID"=>$uid,
-                         "PWD"=>$pwd,
-                         "Database"=>$databaseName);
+<h1>connect to contacts data base</h1>
+<form action="registration.php" method="get">
+code: <input type="text" name=""><br>
+type: <input type="text" name=""><br>
+link: <input type="text" name=""><br>
+reporting time: <input type="text" name=""><br>
+<input type="submit" name="submit" value="register">
+</form>
 
-/* Connect using SQL Server Authentication. */
-$conn = sqlsrv_connect( $serverName, $connectionInfo);
 
-$tsql = "SELECT contact_id, contact_type, , link FROM Table_1";
 
-/* Execute the query. */
-
-$stmt = sqlsrv_query( $conn, $tsql);
-
-if ( $stmt )
-{
-     echo "Statement executed.<br>\n";
-}
-else
-{
-     echo "Error in statement execution.\n";
-     die( print_r( sqlsrv_errors(), true));
-}
-
-/* Iterate through the result set printing a row of data upon each iteration.*/
-
-while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC))
-{
-     echo "Col1: ".$row[0]."\n";
-     echo "Col2: ".$row[1]."\n";
-     echo "Col3: ".$row[2]."<br>\n";
-     echo "-----------------<br>\n";
-}
-
-/* Free statement and connection resources. */
-sqlsrv_free_stmt( $stmt);
-sqlsrv_close( $conn);
-?>
 
 <!--
   <table style="width:100%">
